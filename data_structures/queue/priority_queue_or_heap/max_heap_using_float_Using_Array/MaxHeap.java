@@ -1,4 +1,4 @@
-package priority_queue_or_heap.max_heap_using_float;
+package priority_queue_or_heap.max_heap_using_float_Using_Array;
 
 public class MaxHeap {
     float heap[];
@@ -22,17 +22,16 @@ public class MaxHeap {
 
     public void insert(float data)
     {
-        length++;
-        heap[length] = data;
-        maxHeapify(length);
+        this.length++;
+        heap[this.length] = data;
+        maxHeapify(this.length);
     }
 
     public void display()
     {
-        for (Object data :
-                heap) {
-            System.out.println(data);
+        for (int i = 1; i <= length+1; i++){
+            System.out.println(heap[i]);
         }
-        System.out.println();
+
     }
 }
