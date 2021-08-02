@@ -5,9 +5,10 @@ package priority_queue_or_heap.max_heap_using_float_Using_Array;
     * in Max Heap the child is smaller than its parent
     * formula for parent at a specific position is position/2th index
     * the 0th index is always kept empty in an array!
+    * The values are inserted in the form of level order tree
  */
 public class MaxHeap {
-    float heap[];
+    float []heap;
     int length;
 
     public MaxHeap(int size) {
@@ -27,7 +28,7 @@ public class MaxHeap {
     public void insert(float data) {
         this.length++;
         heap[this.length] = data;
-        maxHeapify(this.length); //swaping the data from LAST index aka length until child is smaller than parent
+        maxHeapify(this.length); //swapping the data from LAST index aka length until child is smaller than parent
     }
 
     public void display() {
