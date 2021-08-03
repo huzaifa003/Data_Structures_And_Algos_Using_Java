@@ -1,4 +1,4 @@
-package priority_queue_or_heap.max_heap_using_float_Using_Array;
+package priority_queue_or_heap.max_heap_using_double_Using_Array;
 /*
     * Max Heap is like a queue
     * it's normally implemented by the arrays
@@ -8,17 +8,17 @@ package priority_queue_or_heap.max_heap_using_float_Using_Array;
     * The values are inserted in the form of level order tree
  */
 public class MaxHeap {
-    float []heap;
+    double[] heap;
     int length;
 
     public MaxHeap(int size) {
-        this.heap = new float[size + 1];
+        this.heap = new double[size + 1];
         length = 0;
     }
 
     public void maxHeapify(int position) { //if child is greater than we swap the parent and child!
         while (position > 1 && heap[position / 2] < heap[position]) {
-            float temp = heap[position];
+            double temp = heap[position];
             heap[position] = heap[position / 2];
             heap[position / 2] = temp;
             position = position / 2; //reaching parent of every child
@@ -52,8 +52,8 @@ public class MaxHeap {
             return;
         else
         {
-            float left = heap[2 * position];
-            float right = heap[2 * position+1];
+            double left = heap[2 * position];
+            double right = heap[2 * position+1];
             if (left > right)
             {
                 heap[2*position] = heap[position];

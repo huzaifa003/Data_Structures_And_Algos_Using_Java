@@ -1,4 +1,4 @@
-package priority_queue_or_heap.max_heap_using_float_Using_Array;
+package priority_queue_or_heap.max_heap_using_double_Using_Array;
 
 public class Runner {
     public static void main(String[] args) {
