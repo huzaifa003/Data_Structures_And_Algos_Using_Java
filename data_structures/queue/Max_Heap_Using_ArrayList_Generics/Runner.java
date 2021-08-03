@@ -10,6 +10,10 @@ public class Runner {
         heap.insert(5);
         heap.insert(6);
         heap.insert(7);
+        heap.insert(8);
+        heap.display();
+
+        heap.deleteRoot();
         heap.display();
     }
 

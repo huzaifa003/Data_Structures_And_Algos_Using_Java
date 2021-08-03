@@ -32,9 +32,48 @@ public class MaxHeapGenericArrayList<T extends Comparable<T>> {
 
     public void display()
     {
-        for (int i = 1; i < length+1; i++) {
+        for (int i = 1; i <= length; i++) {
             System.out.println(maxHeapList.get(i));
         }
         System.out.println();
+    }
+
+    public void deleteRoot()
+    {
+        maxHeapList.set(1,maxHeapList.get(length)) ;
+        maxHeapList.set(length,null);
+        length--;
+        structurePostDelete(1);
+    }
+
+    public void deleteAt(int position)
+    {
+        maxHeapList.set(position,maxHeapList.get(length));
+        maxHeapList.set(length,null);
+        length--;
+        structurePostDelete(position);
+    }
+
+    private void structurePostDelete(int position)
+    {
+        if (position >= length || position * 2 + 1 >= length || maxHeapList.get(position).compareTo(maxHeapList.get(position*2)) >0 && maxHeapList.get(position).compareTo(maxHeapList.get(position*2+1)) >0)
+            return;
+        else
+        {
+            T left = maxHeapList.get(position*2);
+            T right = maxHeapList.get(position*2+1);
+            if (left.compareTo(right) > 0 )
+            {
+                maxHeapList.set(position*2,maxHeapList.get(position));
+                maxHeapList.set(position,left);
+                structurePostDelete(position*2);
+            }
+            else
+            {
+                maxHeapList.set(position*2+1,maxHeapList.get(position));
+                maxHeapList.set(position,right);
+                structurePostDelete(position*2+1);
+            }
+        }
     }
 }
