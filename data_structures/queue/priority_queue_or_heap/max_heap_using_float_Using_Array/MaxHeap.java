@@ -37,4 +37,35 @@ public class MaxHeap {
         }
 
     }
+
+    public void deleteRoot()
+    {
+        heap[1] = heap[length];
+        heap[length] = 0.0f;
+        length--;
+
+    }
+
+    public void structurePostDelete(int position)
+    {
+        if (position == length)
+            return;
+        else
+        {
+            float left = heap[2 * position];
+            float right = heap[2 * position+1];
+            if (left > right)
+            {
+                heap[2*position] = heap[position];
+                heap[position] = left;
+                structurePostDelete(position*2);
+            }
+            else
+            {
+                heap[2*position+1] = heap[position];
+                heap[position] = left;
+                structurePostDelete(position*2+1);
+            }
+        }
+    }
 }
