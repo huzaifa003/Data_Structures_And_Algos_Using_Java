@@ -57,7 +57,7 @@ public class MaxHeap {
 
     private void structurePostDelete(int position)
     {
-        if (position >= length || heap[position]> heap[position*2] || heap[position]> heap[position*2+1])
+        if (position >= length || heap[position]> heap[position*2] && heap[position]> heap[position*2+1])
             return;
         else
         {
