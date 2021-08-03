@@ -44,21 +44,25 @@ public class MaxHeap {
         heap[1] = heap[length];
         heap[length] = 0.0;
         length--;
-        System.out.println(length + "HELLO");
         structurePostDelete(1);
     }
 
-    public void structurePostDelete(int position)
+    public void deleteAt(int position)
+    {
+        heap[position] = heap[length];
+        heap[length] = 0.0;
+        length--;
+        structurePostDelete(position);
+    }
+
+    private void structurePostDelete(int position)
     {
         if (position >= length || heap[position]> heap[position*2] || heap[position]> heap[position*2+1])
             return;
         else
         {
-            System.out.println("Parent  is = " + heap[position]);
             double left = heap[2 * position];
-            System.out.println("Left is = " + left + "Index is = " + position*2);
             double right = heap[2 * position+1];
-            System.out.println("right is  = " + right);
             if (left > right)
             {
                 heap[2*position] = heap[position];

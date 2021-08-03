@@ -16,5 +16,8 @@ public class Runner {
 
         maxHeap.deleteRoot();
         maxHeap.display();
+
+        maxHeap.deleteAt(2);
+        maxHeap.display();
     }
 }
