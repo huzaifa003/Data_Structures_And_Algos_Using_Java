@@ -9,12 +9,10 @@ public class Runner {
 //        System.out.println(arr.length);
 
         operations.insertAt(arr,8,5);
-        System.out.println(arr[8]);
-        System.out.println(arr[9]);
+        operations.displayArrayWithIndex(arr);
 
         operations.setAt(arr,8,1);
-        System.out.println(arr[8]);
-        System.out.println(arr[9]);
+        operations.displayArrayWithIndex(arr);
 
         System.out.println(operations.findMin(arr));
 
@@ -22,6 +20,15 @@ public class Runner {
         operations.insert(arrString,"Hello");
         operations.insert(arrString,"World");
         operations.displayArrayWithIndex(arrString);
+
+        operations.displayArrayWithIndex(arr);
+        operations.reverseArray(arr);
+        operations.displayArrayWithIndex(arr);
+
+        operations.displayArrayWithIndex(arrString);
+        operations.reverseArray(arrString);
+        operations.displayArrayWithIndex(arrString);
+
         System.out.println(operations.findMin(arrString));
 
     }
