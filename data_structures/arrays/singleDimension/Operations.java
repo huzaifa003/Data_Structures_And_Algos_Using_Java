@@ -23,6 +23,17 @@ public class Operations {
 
 
     }
+    
+    public void insert(Object []arr, Object data)
+    {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == null)
+            {
+                arr[i] = data;
+                break;
+            }
+        }
+    }
 
     public Object[] resizeArray(Object []arr)
     {
@@ -36,10 +47,18 @@ public class Operations {
     public Object findMin(Object[]arr)
     {
         Object min = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null)
+            {
+                min = arr[i];
+                break;
+            }
+        }
+
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] instanceof Double || arr[i] instanceof Integer || arr[i] instanceof Float)
             {
-                if ((Double)arr[i]< (Double)min)
+                if ((Double.parseDouble(arr[i].toString())< (Double.parseDouble(min.toString()))))
                 {
                     min = arr[i];
                 }
@@ -47,12 +66,33 @@ public class Operations {
 
             else if (arr[i] instanceof String)
             {
-                if (((String) arr[i]).compareTo((String) min)<0)
+                if (arr[i].toString().compareTo(min.toString())<0)
                 {
                     min = arr[i];
                 }
             }
         }
         return min;
+    }
+
+    public void displayArray(Object []arr)
+    {
+        for (Object data :
+                arr) {
+            if (data != null)
+            {
+                System.out.println(data);
+            }
+        }
+    }
+
+    public void displayArrayWithIndex(Object []arr)
+    {
+        for (int i = 0; i<arr.length; i++) {
+            if (arr[i] != null)
+            {
+                System.out.println("Index: " + i  + "  || Value :   " + arr[i]);
+            }
+        }
     }
 }

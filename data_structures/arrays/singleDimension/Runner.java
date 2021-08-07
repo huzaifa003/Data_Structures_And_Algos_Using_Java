@@ -18,5 +18,11 @@ public class Runner {
 
         System.out.println(operations.findMin(arr));
 
+        String []arrString= new String[2];
+        operations.insert(arrString,"Hello");
+        operations.insert(arrString,"World");
+        operations.displayArrayWithIndex(arrString);
+        System.out.println(operations.findMin(arrString));
+
     }
 }
