@@ -1,7 +1,9 @@
 package LinkedListGeneric;
 
+import static java.lang.Math.ceil;
+
 public class LinkedListGenericImplementation<T> {
-    Node head;
+    public Node head;
 
     public void insert(T data) {
         Node<T> node = new Node<>(data);
@@ -17,6 +19,7 @@ public class LinkedListGenericImplementation<T> {
     }
 
     public void display() {
+        separator();
         if (detectLoop() == null) {
             Node n = head;
             while (true) {
@@ -27,7 +30,6 @@ public class LinkedListGenericImplementation<T> {
                     n = n.next;
                 }
             }
-            System.out.println();
         }
     }
 
@@ -187,6 +189,22 @@ public class LinkedListGenericImplementation<T> {
             slowNode.next = null; //breaking the cycle before end and start of loop
 
         }
+    }
+
+    public Node getMiddle() {
+        Node temp = head;
+        if (detectLoop() == null && head != null) {
+            for (int i = 0; i < ceil(getLength() / 2.0 - 1); i++) { //iterating until length by 2 '-1' starting from "0" cause our index starts from 0 and length starts from 1
+                temp = temp.next; //forwarding the node
+            }
+            return temp; //returning the node
+        } else {
+            return null; //returning null node
+        }
+    }
+
+    public void separator() {
+        System.out.println("------------------------------------------------------------");
     }
 
 

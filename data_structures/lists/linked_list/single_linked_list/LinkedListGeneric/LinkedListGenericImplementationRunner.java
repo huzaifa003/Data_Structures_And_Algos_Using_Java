@@ -30,6 +30,9 @@ public class LinkedListGenericImplementationRunner {
         list.insertAt(2, 45);
         list.display();
 
+        System.out.println("length of list = " + list.getLength());
+        System.out.println("Middle of list is = " + list.getMiddle().data);
+
         list.reverseList();
         list.display();
 
