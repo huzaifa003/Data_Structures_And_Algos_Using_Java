@@ -74,6 +74,7 @@ public class LinkedListGenericImplementationRunner {
         circularList.insert(3);
         circularList.insert(2);
         circularList.display();
+        System.out.println("length of circular list is = " + circularList.getLength());
 
     }
 }

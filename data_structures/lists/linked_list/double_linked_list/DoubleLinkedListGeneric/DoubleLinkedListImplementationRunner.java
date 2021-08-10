@@ -23,5 +23,7 @@ public class DoubleLinkedListImplementationRunner {
         list1.reverseList();
         list1.displayForwards();
         list1.displayBackwards();
+
+        System.out.println("Length of DoubleLinked List is = " + list1.getLength());
     }
 }

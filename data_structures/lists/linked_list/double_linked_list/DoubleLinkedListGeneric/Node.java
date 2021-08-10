@@ -1,9 +1,10 @@
 package DoubleLinkedListGeneric;
 
 public class Node <T> {
-    T data;
-    Node previousNode;
-    Node nextNode;
+    public T data;
+    public Node previousNode;
+    public Node nextNode;
+
 
     public Node(T data) {
         this.data = data;

@@ -31,6 +31,7 @@ public class LinkedListGenericImplementation<T> {
                 }
             }
         }
+        separator();
     }
 
     public void insertAtStart(T data) {
