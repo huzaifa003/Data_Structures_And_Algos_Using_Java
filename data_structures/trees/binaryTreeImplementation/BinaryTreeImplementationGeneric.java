@@ -3,6 +3,8 @@ package binaryTreeImplementation;
 import queueImplementation.QueueImplementationGeneric;
 import stackImplementation.StackImplementationGeneric;
 
+import java.util.Stack;
+
 /*
  * Binary tree is non linear structure that consists of child and parent nodes
  * EACH node has a right and left structure
@@ -102,22 +104,17 @@ public class BinaryTreeImplementationGeneric<T> {
         }
     }
 
-    public void displayUsingInOrderIterative()
-    {
-        if (root != null)
-        {
+    public void displayUsingInOrderIterative() {
+        if (root != null) {
 
             Node temp = root;
             StackImplementationGeneric<Node> stack = new StackImplementationGeneric<>();
-            while (!stack.isEmpty() || temp != null)
-            {
+            while (!stack.isEmpty() || temp != null) {
                 if (temp != null) //traversing till empty left node
                 {
                     stack.push(temp);
                     temp = temp.left; //traversing till we have last left node
-                }
-                else
-                {
+                } else {
                     temp = stack.pop(); //popping after reaching last node
                     System.out.println(temp.data); //printing data after poping to get the middle node
                     temp = temp.right; //surfing the right node
@@ -126,19 +123,15 @@ public class BinaryTreeImplementationGeneric<T> {
         }
     }
 
-    public void displayUsingInOrderRecursive()
-    {
+    public void displayUsingInOrderRecursive() {
         displayUsingInOrderRecursive(root);
     }
 
-    public void displayUsingInOrderRecursive(Node temp)
-    {
+    public void displayUsingInOrderRecursive(Node temp) {
         if (temp == null) //base condition
         {
             return;
-        }
-        else
-        {
+        } else {
             displayUsingInOrderRecursive(temp.left); //traversing left tree first
             System.out.println(temp.data); //printing the middle node as in inorder
             displayUsingInOrderRecursive(temp.right); //traversing right tree
@@ -146,7 +139,25 @@ public class BinaryTreeImplementationGeneric<T> {
         }
     }
 
+    public void displayUsingPostOrderRecursive() {
+        displayUsingInOrderRecursive(root);
+    }
 
+    public void displayUsingPostOrderRecursive(Node temp) {
+        //in post order traversal we traverse until we reach a node that won't be traversed again
+        if (temp == null) { //here temp node contains root of tree and it's subtrees
+            return;
+        } else {
+            displayUsingPostOrderRecursive(temp.left); //first surfing all of the left side of each tree
+            displayUsingPostOrderRecursive(temp.right); // then surfing the right side of tree
+            System.out.println(temp.data); //producing the last output
+        }
+    }
+
+    public void displayUsingPostOrderIterative()
+    {
+        //TODO
+    }
 
 
 }

@@ -77,7 +77,7 @@ public class Operations {
 
     public void displayArray(Object []arr)
     {
-        seperator();
+        separator();
         for (Object data :
                 arr) {
             if (data != null)
@@ -85,19 +85,19 @@ public class Operations {
                 System.out.println(data);
             }
         }
-        seperator();
+        separator();
     }
 
     public void displayArrayWithIndex(Object []arr)
     {
-        seperator();
+        separator();
         for (int i = 0; i<arr.length; i++) {
             if (arr[i] != null)
             {
                 System.out.println("Index: " + i  + "  || Value :   " + arr[i]);
             }
         }
-        seperator();
+        separator();
     }
 
     public void reverseArray(Object []arr)
@@ -110,7 +110,7 @@ public class Operations {
         }
     }
 
-    private void seperator()
+    private void separator()
     {
         System.out.println("-----------------------------------------");
     }
