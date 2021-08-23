@@ -134,31 +134,36 @@ public class UndirectedGraph {
         separator();
     }
 
-    public void depthFirstSearchRecursive()
-    {
-        boolean[] visited = new boolean[adjacencyList.length];
-
-        for (int x = 0; x < adjacencyList.length; x++) {
-            Node temp = adjacencyList[x].head;
-            if (!visited[x])
-            {
-                depthFirstSearchRecursive(x,visited,temp);
-            }
-        }
-    }
-    private void depthFirstSearchRecursive(int x , boolean[] visited , Node temp) {
-        System.out.println(x);
-        visited[x] = true;
-
-
-        for (int i = 0; i < adjacencyList[x].getLength(); i++) {
-            int y = (int) temp.data;
-            if (!visited[y])
-            {
-                depthFirstSearchRecursive(y,visited,temp.next);
-            }
-        }
-    }
+//    public void depthFirstSearchRecursive()
+//    {
+        //TODO
+//        boolean[] visited = new boolean[adjacencyList.length];
+//
+//        for (int x = 0; x < adjacencyList.length; x++) {
+//            Node temp = adjacencyList[x].head;
+//            if (!visited[x])
+//            {
+//                depthFirstSearchRecursive(x,visited,temp);
+//            }
+//        }
+//    }
+//    private void depthFirstSearchRecursive(int x , boolean[] visited , Node temp) {
+//        System.out.println(x);
+//        visited[x] = true;
+//
+//
+////        for (int i = 0; i < adjacencyList[x].getLength(); i++) {
+//            if (temp == null)
+//            {
+//                return;
+//            }
+//            int y = (int) temp.data;
+//            if (!visited[y])
+//            {
+//                depthFirstSearchRecursive(y,visited,temp.next);
+//            }
+////        }
+//    }
 
 
     public void separator() {
