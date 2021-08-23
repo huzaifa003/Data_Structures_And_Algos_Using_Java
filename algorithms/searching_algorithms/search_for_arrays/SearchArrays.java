@@ -1,4 +1,4 @@
-package for_arrays;
+package search_for_arrays;
 
 public class SearchArrays {
     public Integer linearSearchByValue(Object arr[], Object data)

@@ -1,4 +1,4 @@
-package Unified;
+package search_unified;
 
 import DoubleLinkedListGeneric.DoubleLinkedListImplementation;
 import LinkedListGeneric.LinkedListGenericImplementation;

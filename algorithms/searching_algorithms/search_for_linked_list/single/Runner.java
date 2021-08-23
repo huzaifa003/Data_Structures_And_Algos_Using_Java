@@ -1,4 +1,4 @@
-package for_linked_list.single;
+package search_for_linked_list.single;
 
 import LinkedListGeneric.LinkedListGenericImplementation;
 import circular_singly_linked_list.CircularLinkedListImplementation;

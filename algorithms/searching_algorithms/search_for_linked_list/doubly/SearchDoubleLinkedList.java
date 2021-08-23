@@ -1,4 +1,4 @@
-package for_linked_list.doubly;
+package search_for_linked_list.doubly;
 
 import DoubleLinkedListGeneric.DoubleLinkedListImplementation;
 import DoubleLinkedListGeneric.Node;
