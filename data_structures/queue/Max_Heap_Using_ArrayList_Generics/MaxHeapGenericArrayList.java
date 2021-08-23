@@ -27,7 +27,7 @@ public class MaxHeapGenericArrayList<T extends Comparable<T>> {
     {
         this.length++;
         maxHeapList.add(this.length,data); //here we need index cause first index is supposed to be empty!
-        swim_max_heapify(length);
+        swim_max_heapify(length); //index for last element
     }
 
     public void display()

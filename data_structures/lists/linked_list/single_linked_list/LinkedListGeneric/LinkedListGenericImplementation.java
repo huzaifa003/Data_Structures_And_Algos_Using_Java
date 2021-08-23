@@ -26,12 +26,36 @@ public class LinkedListGenericImplementation<T> {
                 if (n == null)
                     break;
                 else {
-                    System.out.println(n.data);
+                    System.out.print(n.data + " -> ");
                     n = n.next;
                 }
             }
+            System.out.println("Null");
         }
         separator();
+    }
+
+    public void display(boolean separator)
+    {
+        if (separator)
+        {
+            display();
+        }
+        else
+        {
+            if (detectLoop() == null) {
+                Node n = head;
+                while (true) {
+                    if (n == null)
+                        break;
+                    else {
+                        System.out.print(n.data + " -> ");
+                        n = n.next;
+                    }
+                }
+                System.out.println("Null");
+            }
+        }
     }
 
     public void insertAtStart(T data) {

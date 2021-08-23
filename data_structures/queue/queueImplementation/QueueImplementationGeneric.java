@@ -26,20 +26,20 @@ public class QueueImplementationGeneric<T> {
         length++;
     }
 
-    public T dequeue()
+    public T dequeue() //same as poll()
     {
         Node node = front;
-        if (front!= null && front.next != null)
+        if (this.front!= null && this.front.next != null)
         {
-            front = front.next;
+            this.front = this.front.next; //replacing front with another element
         }
         else
         {
-            front = null;
-            rear = null;
+            this.front = null;
+            this.rear = null;
         }
         length--;
-        return (T)node.data;
+        return (T)node.data; //returning the last node
     }
 
     public boolean isEmpty()
