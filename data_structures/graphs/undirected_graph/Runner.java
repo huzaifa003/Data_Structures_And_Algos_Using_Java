@@ -12,6 +12,7 @@ public class Runner {
         undirectedGraph.printAdjacencyList();
 
         undirectedGraph.breadthFirstSearch(3);
+        undirectedGraph.depthFirstSearchIterative(3);
 
 
     }
