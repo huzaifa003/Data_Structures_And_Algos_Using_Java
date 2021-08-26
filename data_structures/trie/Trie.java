@@ -63,4 +63,33 @@ public class Trie {
             // for example: if we subtract 'a' from 'a' we get 0, which is gonna be the index value of trieNode Array
         return character - 'a';
     }
+
+    public boolean contains(String word)
+    {
+        boolean flag = true;
+
+        word = word.toLowerCase();
+        TrieNode current = root;
+        for (int i = 0; i < word.length(); i++) {
+            char character = word.charAt(i); //getting char from string
+            int index = getIndex(character); //getting index
+
+            if (current.children[index] == null ) //we used index cause index represents the character for example 0 will represent 'a' if a trieNode exists on that index it indicates the presence of that char
+            {
+                flag = false; //if any character fails to match or doesn't exist flag is false
+                break;
+            }
+            else
+            {
+                current = current.children[index]; //moving to next character if it matchs
+            }
+        }
+
+        if (!current.isWord) //if the isWord is true only then will word exist, cause if this check is not present it'll return true if contains("dad") is entered and trie contains "daddy"
+        {
+            flag = false;
+        }
+
+        return flag;
+    }
 }

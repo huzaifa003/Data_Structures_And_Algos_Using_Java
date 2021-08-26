@@ -14,7 +14,7 @@ public class Runner {
         undirectedGraph.breadthFirstSearch(3);
         undirectedGraph.depthFirstSearchIterative(3);
 
-        undirectedGraph.depthFirstSearchRecursive();
+//        undirectedGraph.depthFirstSearchRecursive();
 
 
     }
