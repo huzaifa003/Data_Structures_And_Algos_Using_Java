@@ -1,3 +1,5 @@
+package implentation;
+
 import java.util.ArrayList;
 
 /*
@@ -95,19 +97,20 @@ public class Trie {
          * this method iterates till the required prefix is found
          * this is used for autocompletion as in google search results
          */
+        boolean flag = false;
         prefix = prefix.toLowerCase();
         TrieNode current = root;
         int i;
         for (i = 0; i < prefix.length(); i++) {
             int index = getIndex(prefix.charAt(i));
             if (current.children[index] == null) {
+                flag = true;
                 break;
             } else {
                 current = current.children[index];
             }
         }
-
-        if (i < prefix.length() - 1) {
+        if (flag) { //flag returns null if loops break before finding prefix
             return null;
         } else {
             return current;
@@ -116,7 +119,7 @@ public class Trie {
 
     public ArrayList<String> displayAllWords() {
         /*
-            * here we use root cause we need to display all words, and prefix is empty string cause in root there is no prefix
+         * here we use root cause we need to display all words, and prefix is empty string cause in root there is no prefix
          */
         TrieNode trieNode = root;
         if (trieNode != null) {
@@ -129,9 +132,9 @@ public class Trie {
 
     public ArrayList<String> displayAllWordsUsingPrefix(String prefix) {
         /*
-            * we first get the required prefix node using searchNodeUsingPrefix(prefix)
-            * then it passes the already found word as prefix such as "ca" etc
-            * then it returns words after passing it to addAllWords()
+         * we first get the required prefix node using searchNodeUsingPrefix(prefix)
+         * then it passes the already found word as prefix such as "ca" etc
+         * then it returns words after passing it to addAllWords()
          */
         TrieNode trieNode = searchNodeUsingPrefix(prefix);
         if (trieNode != null) {
