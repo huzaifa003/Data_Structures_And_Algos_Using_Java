@@ -1,0 +1,6 @@
+An Optimal Substructure is a property of a problem if:
+-> optimal solution of the problem can be obtained by using optimal solution of sub-problems.
+   -> Example: fib(n) = fib(n-1) + fib(n-2)
+      -> Here one problem is broken into two smaller sub problems of ( n ->  n-1 and n-2)
+
+This helps us identify if the problem is a dynamic programming problem or not.

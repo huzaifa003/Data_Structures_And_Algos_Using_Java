@@ -1,0 +1,25 @@
+A dynamic programming is nothing but an optimization technique of recursion
+In dynamic problem we store the values of sub problem to be used later
+A sub-problem should not be solved again is the main goal of the dynamic programming
+
+-> Consider an expression : 1+1+1+1+1+1+1+1+1+1
+-> Calculate its value : which  =  10
+-> Add 1 to it :
+-> Answer is : 11
+
+How were you able to solve the last question so easily?
+-> By remembering the value of previous expression
+
+Recursion is simply breaking a bigger problem to smaller problem till it reaches it base value
+-> Dynamic Programming is optimizing that problem by storing the results of all the sub problems
+    -> It reduces the time complexity from exponential to linear
+
+In other words:
+    -> it's a technique to solve complex problems by:
+        -> breaking it into smaller sub problems.
+        -> solving those sub problems & storing their results.
+        -> Re-Use those stored values if that sub problem occurs again.
+        -> Finally using the solutions of smaller problems to build solution of complex problem.
+
+
+DYNAMIC PROGRAMMING  =  RECURSION + MEMORIZATION.

@@ -1,0 +1,9 @@
+Overlapping SubProblems is a property of a problem if:
+-> solution of given problem is obtained by solving same sub-problems multiple times.
+   -> Example: fib(n) = fib(n-1) + fib(n-2)
+      -> consider n = 5:
+      -> when we run the following recursive formula it will solve fib(2) fib(1) fib(0) multiple times.
+      -> in fact much of trees overlap with others.
+
+This is another property that shows if problem is dynamic programming problem.
+
