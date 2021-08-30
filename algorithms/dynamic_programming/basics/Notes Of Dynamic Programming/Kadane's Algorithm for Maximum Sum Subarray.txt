@@ -1,0 +1,23 @@
+                                    BACKGROUND:
+In this approach we are given a random Integer array called as max-subArray-sum.
+    -> Here we try to find a sub-array such that sum of elements of that sub-array is greater than every other*****
+    -> This Approach is not Good, hence the Kadane's Algo was made for optimising it.
+
+    Properties of Sub Arrays are:
+        -> It is continuous.
+        -> It's smaller than the og array.
+        -> There can be multiple of them.
+
+
+In Kadane's Algorithm:
+    -> We Keep track of two variables
+        -> currentMax : which denotes the current sub-array and all it's elements.
+        -> maxSoFar: : denotes the maximum sum so far regardless of currentMax sum.
+
+    -> At each index, element asks two questions:
+        -> Should I become part of sub-array?
+        -> Should I start a sub-array?
+            -> At the start it is the same thing.
+            -> If by adding the element into the array makes it's SUM bigger than creating a new sub-array (element it points on currently) then it's added.
+            -> If it's less than creating a new sub-array then a new sub-array will be created.
+            -> Whenever we make a new sub-array, we discard the previous array.
