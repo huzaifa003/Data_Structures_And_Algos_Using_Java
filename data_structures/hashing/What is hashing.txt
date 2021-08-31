@@ -1,0 +1,13 @@
+--------------------------What is Hashing?-------------------------------------------------
+Hashing is a process of converting a key to an index using Hashing functions or algorithms.
+This reduces the time complexity of retrieving an element.
+The amount of complexity reduced depends on the quality of hashing functions.
+It enables us to fix a large value inside a smaller and more practical array.
+
+--------------------------How Hashing Works?-----------------------------------------------
+Hashing works by:
+    -> putting a key in hashing function that returns an index or HashCode.
+
+-------------------------What is Hash Table?-----------------------------------------------
+    -> It is a generalized form of array.
+ 
