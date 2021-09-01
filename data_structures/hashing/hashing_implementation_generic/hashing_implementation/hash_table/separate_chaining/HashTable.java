@@ -66,6 +66,28 @@ public class HashTable<K extends Comparable<K>, V> {
         }
         return null;
     }
+
+    public V deleteUsingModular(K key) {
+        int index = new HashCode<K>().HashCodeModular(key, this.capacity); //getting index by hashing algorithm
+        HashNode<K, V> head = buckets.get(index); //first node
+
+        if (head != null) {
+            if (head.key.compareTo(key) == 0) {
+                buckets.set(index, buckets.get(index).next);
+                return head.value;
+            } else if (head.next != null) {
+                HashNode<K, V> temp = head.next;
+                while (temp.key.compareTo(key) != 0) {
+                    head = head.next;
+                    temp = head.next;
+                }
+                head.next = head.next.next;
+                return temp.value;
+            }
+
+        }
+        return null;
+    }
 }
 
 
