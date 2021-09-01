@@ -41,9 +41,9 @@ public class HashTableNonGen {
                 head = head.next; //until the pointer reaches the last HashNode of the index in case of collision (separate chaining)
             }
         }
-        head = buckets[index];
+        head = buckets[index]; //making head the start of array again.
         HashNodeNonGen node = new HashNodeNonGen(key, value);
-        node.next = head; //placing iterated head at next pointer of new node
+        node.next = head; //placing head at next pointer of new node
         buckets[index] = node;//inserting key value pair at start of iterated head cause order doesn't matter in Hash
 
     }
