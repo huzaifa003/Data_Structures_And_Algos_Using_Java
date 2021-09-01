@@ -19,6 +19,30 @@ public class Runner {
         System.out.println(hashTable.getUsingModular(99));
         System.out.println(hashTable.getUsingModular(999));
 
+        try {
+            hashTable.deleteUsingModular(9);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        System.out.println(hashTable.getUsingModular(9));
+        System.out.println(hashTable.getUsingModular(99));
+        System.out.println(hashTable.getUsingModular(999));
+
+        try {
+            hashTable.deleteUsingModular(999);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        System.out.println(hashTable.getUsingModular(9));
+        System.out.println(hashTable.getUsingModular(99));
+        System.out.println(hashTable.getUsingModular(999));
+
+        hashTable.insertUsingModular(9, "Collision1 After Deleting");
+        System.out.println(hashTable.getUsingModular(9));
+
+        hashTable.insertUsingModular(999, "Collision3 After Deleting");
+        System.out.println(hashTable.getUsingModular(999));
+
 
     }
 }

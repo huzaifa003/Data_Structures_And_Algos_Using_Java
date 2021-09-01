@@ -62,4 +62,21 @@ public class HashTableNonGen {
         return null;
     }
 
+    public void deleteUsingModular(int key) throws IllegalArgumentException {
+        int index = new HashCodeNonGen().HashCodeModular(key, this.capacity);
+        HashNodeNonGen head = buckets[index]; //first node
+        if (head != null) {
+            if (head.key == key) {
+                buckets[index] = buckets[index].next;
+            } else if (head.next != null) {
+                while (head.next.key != key) {
+                    head = head.next;
+                }
+                head.next = head.next.next;
+            }
+        } else {
+            throw new IllegalArgumentException("This Key Doesn't Exist");
+        }
+    }
+
 }
